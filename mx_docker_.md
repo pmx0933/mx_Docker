@@ -85,7 +85,7 @@ sudo docker run -u mingxi -w /home/mingxi --gpus all -it --name mingxi mx_server
 将docker中的内容显示到宿主机，并把当前的文件夹和docker共享
 xhost +local:docker
 sudo docker run -u mingxi -w /home/mingxi --gpus all -it --name mingxi   -v $(pwd):/home/mingxi/workspace   -v /tmp/.X11-unix:/tmp/.X11-unix:rw   -e DISPLAY=$DISPLAY   mx_claw:v1.4 bash
-(注：$(pwd)可以更改为指定的目录)
+(注：$(pwd)可以更改为指定的目录，--network host 参数表示docker直接使用宿主机的网络)
 
 进入容器：
 sudo docker start -ai mingxi
