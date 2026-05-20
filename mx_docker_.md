@@ -82,7 +82,7 @@ docker images 可以查看到容器之后
 sudo docker run -u mingxi -w /home/mingxi --gpus all -it --name mingxi mx_server:v1.1 bash
 如果需要把系统中的文件夹挂在进去则需要再命令中加入 -v /home/mingxi/my_code:/workspace
 
-将docker中的内容显示到宿主机，并把当前的文件夹和docker共享
+# ** 将docker中的内容显示到宿主机，并把当前的文件夹和docker共享
 xhost +local:docker
 sudo docker run -u mingxi -w /home/mingxi --gpus all -it --name mingxi   -v $(pwd):/home/mingxi/workspace   -v /tmp/.X11-unix:/tmp/.X11-unix:rw   -e DISPLAY=$DISPLAY   mx_claw:v1.4 bash
 (注：$(pwd)可以更改为指定的目录，--network host 参数表示docker直接使用宿主机的网络)
