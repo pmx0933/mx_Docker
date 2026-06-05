@@ -4,7 +4,7 @@
 2. 运行build_training.sh脚本从原始的nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04构建自己的镜像；
 3. 开启当前提供的容器并使用按照下边的命令：
 ```python
-加载标准镜像：sudo docker load mx_server_v1.1.tar
+加载标准镜像：sudo docker load -i mx_server_v1.1.tar
 开启新的容器：sudo docker run --gpus all -it --name mingxi mx_server:latest bash
 进入已经创建好的容器：sudo docker start -ai mingxi
 挂载硬盘初始化容器(可以不用，这样就和用户隔离)：sudo docker run --gpus all -it --rm  -v /home/mingxi/my_code:/workspace --name mingxi mx_server:latest bash
