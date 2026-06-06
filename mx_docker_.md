@@ -95,7 +95,10 @@ sudo docker exec -it mingxi bash
 删除创建的容器：
 sudo docker rm mingxi
 ```
+8. 提交镜像并导出
+docker commit my_container my_yolo_env:v1
 
+docker save my_yolo_env:v1 | gzip > my_yolo_env_v1.tar.gz
 
 
 
